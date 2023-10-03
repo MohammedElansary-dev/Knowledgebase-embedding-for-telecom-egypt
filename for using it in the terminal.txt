@@ -1,0 +1,4 @@
+message = "can you give me the DuPont analysis"
+
+response = generate_response(message)
+print(response)

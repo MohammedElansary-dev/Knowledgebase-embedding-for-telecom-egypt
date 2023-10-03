@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 1. Vectorise the sales response csv data
-loader = CSVLoader(file_path="sales_response.csv")
+loader = CSVLoader(file_path="we_company_data.csv")
 documents = loader.load()
 
 embeddings = OpenAIEmbeddings()
@@ -33,27 +33,21 @@ def retrieve_info(query):
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
 
 template = """
-You are a world class business development representative. 
-I will share a prospect's message with you and you will give me the best answer that 
-I should send to this prospect based on past best practies, 
+You are a world class financial analysist. 
+I will give you questions about the company (telecom Egypt we) and you will give me the most comprehensive answer. 
 and you will follow ALL of the rules below:
+1/ Response should be informative and try to say what the numbers mean compare to other years.
+2/ the user is not a financial expert so try to explain as much as you can
 
-1/ Response should be very similar or even identical to the past best practies, 
-in terms of length, ton of voice, logical arguments and other details
-
-2/ If the best practice are irrelevant, then try to mimic the style of the best practice to prospect's message
-
-Below is a message I received from the prospect:
+Below is what the user asked:
 {message}
 
-Here is a list of best practies of how we normally respond to prospect in similar scenarios:
-{best_practice}
+Here is my answer:
+{ai_answer}"""
 
-Please write the best response that I should send to this prospect:
-"""
 
 prompt = PromptTemplate(
-    input_variables=["message", "best_practice"],
+    input_variables=["message", "ai_answer"],
     template=template
 )
 
@@ -62,21 +56,22 @@ chain = LLMChain(llm=llm, prompt=prompt)
 
 # 4. Retrieval augmented generation
 def generate_response(message):
-    best_practice = retrieve_info(message)
-    response = chain.run(message=message, best_practice=best_practice)
+    ai_answer = retrieve_info(message)
+    response = chain.run(message=message, ai_answer=ai_answer)
     return response
+
 
 
 # 5. Build an app with streamlit
 def main():
     st.set_page_config(
-        page_title="Customer response generator", page_icon=":bird:")
+        page_title="Assistant financial analyst for Telecom Egypt", page_icon=":book:")
 
-    st.header("Customer response generator :bird:")
-    message = st.text_area("customer message")
+    st.header("Assistant financial analyst for Telecom Egypt :book:")
+    message = st.text_area("user quetion")
 
     if message:
-        st.write("Generating best practice message...")
+        st.write("Generating you answer...")
 
         result = generate_response(message)
 
