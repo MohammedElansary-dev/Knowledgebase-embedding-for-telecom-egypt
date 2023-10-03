@@ -68,7 +68,7 @@ def main():
         page_title="Assistant financial analyst for Telecom Egypt", page_icon=":book:")
 
     st.header("Assistant financial analyst for Telecom Egypt :book:")
-    message = st.text_area("user quetion")
+    message = st.text_area("by Mohammed Elansary")
 
     if message:
         st.write("Generating you answer...")
