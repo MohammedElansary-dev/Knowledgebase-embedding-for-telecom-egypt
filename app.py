@@ -91,12 +91,7 @@ def main():
 
     st.header("Assistant financial analyst for Telecom Egypt :book:")
     message = st.text_area("by Mohammed Elansary")
-    hide_st_style = """
-                <style>
-                footer {visibility: hidden;}
-                </style>
-                """
-    st.markdown(hide_st_style, unsafe_allow_html=True, use_container_width=True)
+
     if message:
         st.write("Generating your answer...")
 
@@ -105,7 +100,7 @@ def main():
         result = result.replace("+","}")
         result = result.replace("_","{")
         result = result.replace("@","%27")
-        st.info(result)
+        st.info(result ,use_container_width=True)
 
 
 if __name__ == '__main__':
