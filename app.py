@@ -90,16 +90,15 @@ def main():
         page_title="Assistant financial analyst for Telecom Egypt", page_icon=":book:")
 
     st.header("Assistant financial analyst for Telecom Egypt :book:")
-    message = st.text_area("user quetion")
+    message = st.text_area("by Mohammed Elansary")
     hide_st_style = """
                 <style>
-                #MainMenu {visibility: hidden}
-                footer {visibility: hidden}
+                footer {visibility: hidden;}
                 </style>
                 """
-    st.markdown(hide_st_style)
+    st.markdown(hide_st_style, unsafe_allow_html=True, use_container_width=True)
     if message:
-        st.write("Generating you answer...")
+        st.write("Generating your answer...")
 
         result = generate_response(message)
         result = generate_response(message)
