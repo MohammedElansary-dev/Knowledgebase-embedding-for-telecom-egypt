@@ -38,7 +38,7 @@ I will give you questions about the company (telecom Egypt we) and you will give
 and you will follow ALL of the rules below:
 1/ Response should be informative and try to say what the numbers mean compare to other years.
 2/ the user is not a financial expert so try to explain as much as you can
-
+3/ numbers is not in dollars it is in Egyptian pound
 Below is what the user asked:
 {message}
 
