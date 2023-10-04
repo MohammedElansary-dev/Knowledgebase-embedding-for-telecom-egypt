@@ -90,7 +90,7 @@ def main():
         page_title="Assistant financial analyst for Telecom Egypt", page_icon=":book:")
 
     st.header("Assistant financial analyst for Telecom Egypt :book:")
-    message = st.text_area("by Mohammed Elansary")
+    message = st.text_area("by Mohammed Elansary    v0.11")
 
     if message:
         st.write("Generating your answer...")
@@ -100,7 +100,7 @@ def main():
         result = result.replace("+","}")
         result = result.replace("_","{")
         result = result.replace("@","%27")
-        st.info(result ,use_container_width=True)
+        st.info(result)
 
 
 if __name__ == '__main__':
