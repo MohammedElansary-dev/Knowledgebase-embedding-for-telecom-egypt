@@ -94,10 +94,10 @@ def main():
     hide_st_style = """
                 <style>
                 #MainMenu {visibility: hidden}
-                header {visibility: hidden}
+                footer {visibility: hidden}
                 </style>
                 """
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+    st.markdown(hide_st_style)
     if message:
         st.write("Generating you answer...")
 
