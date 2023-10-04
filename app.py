@@ -81,8 +81,10 @@ def main():
         
         response, chart_output = generate_response(message)
 
-        st.info(response)
-        st.image(chart_output)  # Display the generated chart as an image
+        combined_output = f"{response}\n\n{chart_output}"
+
+        st.write(combined_output, unsafe_allow_html=True)  # unsafe_allow_html is used to render HTML content (chart_output is HTML)
+
 
 
 if __name__ == '__main__':
