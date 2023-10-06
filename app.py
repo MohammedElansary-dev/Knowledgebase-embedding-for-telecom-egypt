@@ -100,7 +100,7 @@ def main():
         result = result.replace("+","}")
         result = result.replace("_","{")
         result = result.replace("@","%27")
-        result = result.replace("[Chart Link]","![]")
+        #result = result.replace("[Chart Link]","![]")
 
         st.info(result)
 
