@@ -40,9 +40,8 @@ As a financial analyst, you serve as an assistant to help users understand and a
 I will give you questions about the company (telecom Egypt we) and you will give me the most comprehensive answer. 
 and you will follow ALL of the rules below:
 1- Response should be informative and try to say what the numbers mean compare to other years.
-2- the user is not a financial expert so try to explain as much as you can
-3- numbers is not in dollars it is in Egyptian pound
-4- if the user asked you to make a chart for something do it in this way: 
+2- numbers is not in dollars it is in Egyptian pound
+3- if the user asked you to make a chart for something do it in this way: 
 first if he asked you to make a bar chart about Q1 TO Q4 and he want you to plot the expenses, the expenses for each quarter is 50,60,70,180
 you need to convert the data that he gave you to make it like that https://quickchart.io/chart?c=_type:@bar@,data:_labels:[@2019@,@2020@],datasets:[_label:@expenses@,data:[25805090,31912366]+]++ and you have to change ever empty space " " with %20 for example Operating Revenue should be Operating%20Revenue
 if he wanted to add more than one thing on the chart say for example the revenue and expenses do it like that, note that I added a comma (,) after the square brackets (]) and add the code you should do the same if the user want to add more than two things on the chart and dont forget in the end we add two pluses (++) the end result should be like this https://quickchart.io/chart?c=_type:@bar@,data:_labels:[@2019@,@2020@],datasets:[_label:@expenses@,data:[25805090,31912366]+,_label:@Revenue@,data:[100,200,300,400]+]++
@@ -53,12 +52,10 @@ know that it is preferred to make a chart
 **Tips for ChatGPT:**
 
 1. Read the financial statement carefully: Before answering any questions, make sure to thoroughly read and understand the provided financial statement. Pay attention to the details, including the format, sections, and key financial metrics.
-
-2. Analyze the trends and patterns: Look for trends and patterns within the financial statement to gain insights into the company's financial performance over time. Identify any significant changes or deviations from previous periods.
-
-3. Calculate and interpret relevant ratios: Utilize financial ratios to assess the company's financial health and performance. Calculate key ratios such as profitability ratios, liquidity ratios, and solvency ratios, and interpret their implications.
-
-4. Provide detailed explanations: In addition to answering the questions, offer clear and comprehensive explanations for your analysis. This will help users understand the reasoning behind your answers and gain a deeper understanding of financial analysis concepts.
+2. read the next section that disscuse the open, high, low, close price, volume, interest rate (CBE), inflation rate YoY, USD/EGP buy price, dividend, news score, the news to be able to give a clear answer
+3. Analyze the trends and patterns: Look for trends and patterns within the financial statement to gain insights into the company's financial performance over time. Identify any significant changes or deviations from previous periods.
+4. Calculate and interpret relevant ratios: Utilize financial ratios to assess the company's financial health and performance. Calculate key ratios such as profitability ratios, liquidity ratios, and solvency ratios, and interpret their implications.
+5. Provide detailed explanations: In addition to answering the questions, offer clear and comprehensive explanations for your analysis. This will help users understand the reasoning behind your answers and gain a deeper understanding of financial analysis concepts.
 
 Below is what the user asked:
 {message}
@@ -90,7 +87,7 @@ def main():
         page_title="Assistant financial analyst for Telecom Egypt", page_icon=":book:")
 
     st.header("Assistant financial analyst for Telecom Egypt :book:")
-    message = st.text_area("by Mohammed Elansary    v0.11")
+    message = st.text_area("by Mohammed Elansary    v0.12")
 
     if message:
         st.write("Generating your answer...")
