@@ -11,7 +11,7 @@ load_dotenv()
 
 # 1. Vectorise the sales response csv data
 # change the csv file name with the desierd one
-loader = CSVLoader(file_path="france_and_malaysia.csv")
+loader = CSVLoader(file_path="france_and_malaysia - Copy.csv")
 documents = loader.load()
 
 embeddings = OpenAIEmbeddings()
