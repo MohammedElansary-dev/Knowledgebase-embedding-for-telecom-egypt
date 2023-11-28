@@ -93,7 +93,7 @@ def main():
         st.write("Generating your answer...")
 
         result = generate_response(message)
-        result = generate_response(message)
+        #result = generate_response(message)
         #result = result.replace("+","}")
         #result = result.replace("_","{")
         #result = result.replace("@","%27")
