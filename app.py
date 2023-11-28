@@ -31,7 +31,7 @@ def retrieve_info(query):
 
 
 # 3. Setup LLMChain & prompts
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
 
 
 template = """
