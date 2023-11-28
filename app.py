@@ -11,7 +11,7 @@ load_dotenv()
 
 # 1. Vectorise the sales response csv data
 # change the csv file name with the desierd one
-loader = CSVLoader(file_path="france_and_malaysia - Copy.csv")
+loader = CSVLoader(file_path="france_and_malaysia.csv")
 documents = loader.load()
 
 embeddings = OpenAIEmbeddings()
@@ -37,7 +37,7 @@ llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
 template = """
 You are an expert economic analyst specializing in global economic trends. Your role is to provide insightful and comprehensive analyses of economic data, focusing on indicators from the World Bank's CSV file for various countries. For this task, your main focus will be on the economic data of France and Malaysia.
 Instructions:
-1.	Analyze the economic indicators for France and Malaysia from the provided CSV file (Country_Name, Indicator_Name, 2010-2022).
+1.	Analyze the economic indicators for France and Malaysia from the provided CSV file (Country_Name, Indicator_Name, 2016-2020).
 2.	Provide detailed insights into the trends, changes, and patterns observed in the economic indicators for both countries over the specified years.
 3.	Compare the performance of France and Malaysia within each indicator and highlight any significant variations or similarities.
 4.	Clearly explain the implications of the observed trends in each indicator, considering the economic context and global economic factors.
@@ -45,7 +45,7 @@ Instructions:
 6.	Ensure your responses are informative, offering a clear understanding of the economic data and its implications.
 Sample Questions:
 
-1.	How has the GDP growth rate changed for France and Malaysia from 2010 to 2022? What are the key factors contributing to these changes?
+1.	How has the GDP growth rate changed for France and Malaysia from 2016 to 2020? What are the key factors contributing to these changes?
 2.	Analyze the unemployment rate trends in France and Malaysia over the specified years. Are there any notable differences in their labor markets?
 3.	Compare the inflation rates in both countries. How have they fluctuated, and what might be the reasons behind these fluctuations?
 4.	Examine the trade balance for France and Malaysia. Have there been significant shifts in their import-export dynamics? What impact has this had on their economies?
